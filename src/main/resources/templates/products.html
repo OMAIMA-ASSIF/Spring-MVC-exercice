@@ -3,21 +3,29 @@
 <head>
     <meta charset ="UTF-8">
     <title>Products</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
 </head>
 <body>
     <h2>Products</h2>
-    <table>
-        <thead>
-        <th>ID</th><th>Price</th><th>Quantity</th>
-        </thead>
-        <tbody>
+    <div class="p-3">
+        <table class="table">
+            <thead>
+            <th>ID</th><th>Price</th><th>Quantity</th>
+            </thead>
+            <tbody>
             <tr th:each="p:${productList}">
                 <td th:text="${p.id}"></td>
                 <td th:text="${p.name}"></td>
                 <td th:text="${p.price}"></td>
                 <td th:text="${p.quantity}"></td>
+                <td>
+                    <a class="btn btn-danger" onclick="return confirm('Are you sure ?')"
+                       th:href="@{/delete(id=${p.id})}">Delete</a>
+                </td>
             </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
+
 </body>
 </html>
