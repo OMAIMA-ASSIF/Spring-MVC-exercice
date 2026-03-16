@@ -1,10 +1,12 @@
 package net.omaima.springmvcspringsecurity.web;
 
+import jakarta.validation.Valid;
 import net.omaima.springmvcspringsecurity.entities.Product;
 import net.omaima.springmvcspringsecurity.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,9 +42,10 @@ public class ProductController {
     }
 
     @PostMapping("/saveProduct")
-    public String saveProduct(Product product){
+    public String saveProduct(@Valid Product product, BindingResult bindingResult, Model model){
+        if(bindingResult.hasErrors()){return "new-product";}
         productRepository.save(product);
-        return "redirect:/index";
+        return "redirect:/newProduct";
     }
 }
 
