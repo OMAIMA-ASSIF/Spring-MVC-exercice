@@ -98,6 +98,6 @@ La sécurité a été personnalisée pour gérer l'authentification et l'autoris
 
 ---
 
-## 🚀 Conclusion
+## Conclusion
 
 Ce projet permet de bien comprendre le cycle de développement d'une application Java Enterprise avec Spring Boot, en mettant l'accent sur la séparation des couches (MVC), la validation des données et la sécurisation critique des accès utilisateur.
