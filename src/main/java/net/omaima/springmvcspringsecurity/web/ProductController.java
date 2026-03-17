@@ -19,9 +19,17 @@ public class ProductController {
     private ProductRepository productRepository;
 
     @GetMapping("/user/index")
-    public String index(Model model){
-        List<Product> products = productRepository.findAll();
+    public String index(Model model, @RequestParam(name = "keyword", defaultValue = "") String keyword){
+
+        List<Product> products ;
+        if(keyword.isEmpty()){
+            products = productRepository.findAll();
+        }else{
+            products = productRepository.findByNameContainingIgnoreCase(keyword);
+
+        }
         model.addAttribute("productsList", products);
+        model.addAttribute("keyword", keyword); // to sends the text back so it stays in the search bar :)
         return "products";
     }
     @GetMapping("/")
