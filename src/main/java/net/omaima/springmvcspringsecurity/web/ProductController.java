@@ -8,11 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class ProductController {
@@ -35,6 +34,29 @@ public class ProductController {
         model.addAttribute("product", new Product());
         return "new-product";
     }
+
+    @GetMapping("/admin/displayProduct")
+    public String displayProduct(@RequestParam(name = "id") Long id, Model model){
+        Product product = productRepository.findById(id).orElse(null);
+
+        if (product == null) {
+            // Optionnel : rediriger ou afficher un message d'erreur si l'ID n'existe pas
+            return "redirect:/admin/products";
+        }
+
+        model.addAttribute("product", product);
+        return "display-product";
+    }
+
+    @PostMapping("/admin/editProduct")
+    public String editProduct(@Valid @ModelAttribute("product") Product product, BindingResult bindingResult, Model model  ){
+        if(bindingResult.hasErrors()) {
+            bindingResult.getAllErrors().forEach(err -> System.out.println(err.toString()));
+            return "display-product";}
+        productRepository.save(product);
+        return "redirect:/admin/displayProduct?id=" + product.getId();
+    }
+
 
     @PostMapping("/admin/delete")
     public String delete(@RequestParam(name = "id") Long id){

@@ -29,6 +29,9 @@
                         <form method="post" th:action="@{/admin/delete(id=${p.id})}">
                             <button type="submit" class="btn btn-danger">Delete</button>
                         </form>
+                        <a th:href="@{/admin/displayProduct(id=${p.id})}"  class="btn btn-success">
+                            Edit
+                        </a>
                     </td>
                 </tr>
             </tbody>
