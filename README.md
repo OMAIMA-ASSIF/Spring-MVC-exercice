@@ -4,20 +4,19 @@ Ce projet illustre l'implémentation d'une application web de gestion de produit
 
 ---
 
-## 📸 Étapes de Réalisation (Captures d'écran)
+##  Étapes de Réalisation (Captures d'écran)
 
 *Ici, vous pouvez insérer vos captures d'écran pour illustrer les étapes suivantes :*
 
-1.  **Affichage de la liste des produits**
-    ![Liste des produits](votre_chemin_vers_image1.png)
-2.  **Formulaire d'ajout d'un nouveau produit**
-    ![Ajout produit](votre_chemin_vers_image2.png)
-3.  **Validation des formulaires (Messages d'erreur)**
-    ![Validation](votre_chemin_vers_image3.png)
-4.  **Authentification (Page de Login)**
-    ![Login](votre_chemin_vers_image4.png)
-5.  **Gestion des accès (403 Not Authorized)**
-    ![Non Autorisé](votre_chemin_vers_image5.png)
+<img width="475" height="206" alt="products-before" src="https://github.com/user-attachments/assets/5bfdc9ad-6c9c-424a-a9a8-5c8119853ebe" />
+<img width="1350" height="271" alt="alerte confirmation" src="https://github.com/user-attachments/assets/ae6b5ee8-c48e-49d3-a1c7-3afd6d025501" />
+<img width="1350" height="390" alt="addForm" src="https://github.com/user-attachments/assets/8d82f140-07e7-4ffd-8f09-47082d165a6a" />
+<img width="1356" height="387" alt="user-nom" src="https://github.com/user-attachments/assets/bc7a68e0-72c2-4294-b8bb-e3cac1cdd7de" />
+<img width="1362" height="281" alt="notauthorized" src="https://github.com/user-attachments/assets/84da6cb7-0f2d-4767-ab3f-5c4dee10c0c2" />
+<img width="1021" height="295" alt="tokencsrf" src="https://github.com/user-attachments/assets/ca0b93a6-a62b-4ed8-b096-ec8996abc903" />
+<img width="1160" height="347" alt="login" src="https://github.com/user-attachments/assets/69d62ae0-2633-41a3-aed0-fe7275e3add7" />
+<img width="1357" height="575" alt="final" src="https://github.com/user-attachments/assets/026bf8c8-ae88-4799-a7ee-442c408b0fb5" />
+
 
 ---
 
