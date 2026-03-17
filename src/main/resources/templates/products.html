@@ -4,7 +4,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
       layout:decorate="~{layout1}"
->
+      xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Products</title>
@@ -26,8 +26,9 @@
                     <td th:text="${p.price}"></td>
                     <td th:text="${p.quantity}"></td>
                     <td sec:authorize="hasRole('ADMIN')">
-                        <a class="btn btn-danger" onclick="return confirm('Are you sure?')"
-                           th:href="@{/admin/delete(id=${p.id})}">Delete</a>
+                        <form method="post" th:action="@{/admin/delete(id=${p.id})}">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
                     </td>
                 </tr>
             </tbody>

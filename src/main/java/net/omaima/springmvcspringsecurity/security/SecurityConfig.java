@@ -33,10 +33,11 @@ public class SecurityConfig {
     //definir notre strategie de securite
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
-                .formLogin(Customizer.withDefaults())
+                .formLogin(fl->fl.loginPage("/login").permitAll())  // login form par defaut Customizer.withDefaults()
+                .csrf(Customizer.withDefaults()) //deja par defaut
                 .authorizeHttpRequests(ar -> ar.requestMatchers("/user/**").hasRole("USER"))
                 .authorizeHttpRequests(ar -> ar.requestMatchers("/admin/**").hasRole("ADMIN"))
-                .authorizeHttpRequests(ar -> ar.requestMatchers("/public/**").permitAll())
+                .authorizeHttpRequests(ar -> ar.requestMatchers("/public/**", "/webjars/**").permitAll())
                 .authorizeHttpRequests(ar -> ar.anyRequest().authenticated())
                 .exceptionHandling(eh->eh.accessDeniedPage("/notAuthorized"))
                 .build();
