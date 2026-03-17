@@ -15,6 +15,8 @@ import java.util.Optional;
 
 @Controller
 public class ProductController {
+    
+    // Injection de dependance
     @Autowired
     private ProductRepository productRepository;
 
@@ -32,6 +34,7 @@ public class ProductController {
         model.addAttribute("keyword", keyword); // to sends the text back so it stays in the search bar :)
         return "products";
     }
+    
     @GetMapping("/")
     public String home(){
         return "redirect:/user/index";
@@ -94,5 +97,6 @@ public class ProductController {
         session.invalidate();
         return "login";
     }
+    
 }
 
