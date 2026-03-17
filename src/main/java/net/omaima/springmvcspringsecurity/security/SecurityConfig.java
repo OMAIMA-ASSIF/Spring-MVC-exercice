@@ -11,7 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
-@Configuration //pour ne plus traailler avec la configuration par defaut
+@Configuration // pour ne plus traailler avec la configuration par defaut 
 @EnableWebSecurity
 public class SecurityConfig {
 
@@ -31,6 +31,7 @@ public class SecurityConfig {
 
     @Bean
     //definir notre strategie de securite
+    //protection des ressources
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .formLogin(fl->fl.loginPage("/login").permitAll())  // login form par defaut Customizer.withDefaults()
