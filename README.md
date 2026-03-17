@@ -20,7 +20,7 @@ Ce projet illustre l'implémentation d'une application web de gestion de produit
 
 ---
 
-## 🛠️ Concepts Techniques Clés
+## Concepts Techniques Clés
 
 ### 1. Moteur de Template : Thymeleaf
 
